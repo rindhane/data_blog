@@ -9,6 +9,7 @@ from flask import Flask, render_template,flash, redirect, url_for, session, requ
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators 
 from passlib.hash import sha256_crypt
+from functools import wraps
 from data import Articles
 import sqlalchemy
 import os 
@@ -24,7 +25,7 @@ db_name = os.environ.get("DB_NAME")
 cloud_sql_connection_name = os.environ.get("CLOUD_SQL_CONNECTION_NAME")
 logger=logging.getLogger()
 
-mode="local"
+mode="cloud"
 if mode =="local": 
     db=sqlalchemy.create_engine(string_local)
 else :     
@@ -53,24 +54,28 @@ else :
 #init MYSQL
 #mysql=MySQL(app)
 
+#index
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template("home.html")
 
+#about page
 @app.route("/about")
 def about():
     return render_template("about.html")
 
+#Articles
 @app.route("/Articles")
 def articles():
     return render_template("articles.html", articles=Articles())
 
+#single article
 @app.route("/Articles/<string:id>/")
 def article(id):
     return render_template("article.html", id=id)
 
-
+#Registeration Form class
 class RegisterForm(Form):
     name= StringField("Name", [validators.Length(min=1, max=50)])
     username=StringField("Username",[validators.Length(min=4, max=50)])
@@ -81,6 +86,7 @@ class RegisterForm(Form):
     ])
     confirm= PasswordField("Confirm Password")
     
+#user registeration form
 @app.route("/register", methods=["GET","POST"])
 def register():
     form=RegisterForm(request.form)
@@ -92,17 +98,16 @@ def register():
 
         #Create cursor
         #cur = db.connect()
-        
-        with db.connect() as curr:
-            #execute  query 
-            curr.execute("INSERT INTO users(name, email, username, password) VALUES(%s, %s, %s, %s)", 
-            (name, email, username, password) )
-
-        #Commit to DB
-        #mysql.connection.commit()
-
-        #Close connection
-        #cur.close()
+        registration="close"
+        if registration =="open":
+            with db.connect() as curr:
+                #execute  query 
+                curr.execute("INSERT INTO users(name, email, username, password) VALUES(%s, %s, %s, %s)", 
+                (name, email, username, password) )
+            #Commit to DB
+            #mysql.connection.commit()
+            #Close connection
+            #cur.close()
 
         flash ("You are now registered user and can log in", "success")
         
@@ -138,15 +143,46 @@ def login():
             password =data["password"]
         
             if sha256_crypt.verify(password_candidate,password):
-                app.logger.info('PASSWORD MATCHED')
-            else: 
-                app.logger.info("PASSWORD NOT MATCHED")
+                #passed authentication
+                session["logged_in"]= True
+                session["username"]=username
 
-    else:
-        app.logger.info("No User")
+                flash ("You are now logged in","success")
+                return redirect(url_for("dashboard"))
+                
+            else: 
+                error="Invalid login"
+                return render_template("login.html", error=error)
+        else:
+            error="Username not found"
+            return render_template("login.html", error=error)
 
 
     return render_template('login.html')
+
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if "logged_in" in session:
+            return f(*args, **kwargs)
+        else:
+            flash("Unauthorized, Please login", 'danger')
+            return redirect(url_for('login'))
+    return wrap
+
+
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    flash("You are now logged out", 'success')
+    return redirect(url_for("login"))
+
+#Dashboard
+@app.route("/dashboard")
+@is_logged_in
+def dashboard():
+    return render_template("dashboard.html")
 
 
 
