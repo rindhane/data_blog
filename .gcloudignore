@@ -20,3 +20,9 @@ __pycache__/
 
 #mysqldetails
 sql_details.txt
+
+#python library_folder
+Lib/
+Scripts/
+pyvenv.cfg
+Include/

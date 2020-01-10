@@ -2,9 +2,17 @@
 .vscode/
 __pycache__/
 
+#python library_folder
+Lib/
+Scripts/
+pyvenv.cfg
+Include/
 
-#sql details
+
+#personal_details
 sql_details.txt
+my_app.yaml
+env_variables_local.bat
 
 #gcloud ignore config file
 .gcloudignore
