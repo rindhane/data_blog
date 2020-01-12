@@ -12,6 +12,7 @@ from passlib.hash import sha256_crypt
 from functools import wraps
 #from data import Articles
 import sqlalchemy
+from sqlalchemy import text
 import os 
 import logging
 
@@ -75,6 +76,7 @@ def articles():
     articles=result.fetchall()
     #closing the proxy object of sqlalchemy
     result.close()
+    curr.close()
 
     if len(articles)>0:
         return render_template("articles.html",articles=articles)
@@ -92,7 +94,7 @@ def article(id):
     article=result.fetchone()
     #closing the proxy object of sqlalchemy
     result.close()
-    print(article)
+    curr.close()
 
     try :
         len(article)>0
@@ -162,6 +164,7 @@ def login():
         result = curr.execute("SELECT * FROM users WHERE username= {0}".format(quote_string(username)))
         temp=result.fetchall()
         result.close()
+        curr.close()
 
         if len(temp) > 0: 
             #get stored hash
@@ -216,6 +219,7 @@ def dashboard():
     articles=result.fetchall()
     #closing the proxy object of sqlalchemy
     result.close()
+    curr.close()
 
     if len(articles)>0:
         return render_template("dashboard.html",articles=articles)
@@ -243,12 +247,76 @@ def add_article():
         res=cur.execute("INSERT INTO articles(title, body, author) VALUES({0},{1},{2})".format(quote_string(title),quote_string(body),quote_string(session["username"])))
         #it gets auto-commited &closing the connection
         res.close() 
+        cur.close()
         #success message
         flash("Article Created","success")
         #redirecting to dashboard
         return redirect(url_for('dashboard'))
         
     return render_template('add_article.html',form=form)
+
+@app.route("/edit_article/<string:id>", methods=["GET", "POST"])
+@is_logged_in
+def edit_article(id):
+    #create cursor
+    curr=db.connect()
+    
+    #get article by id 
+    result=curr.execute("SELECT * FROM articles WHERE id = {0}".format(quote_string(str(id))))
+    article=result.fetchone()
+    result.close()
+    curr.close()
+    
+    #get form
+    form =ArticleForm(request.form)
+    if article == None:
+        msg="No Article Found"
+        flash(msg,"danger")
+        return redirect(url_for("articles"))
+    
+    #populate article form fields
+    form.title.data=article["title"]
+    form.body.data=article["body"]
+
+    if request.method =="POST" and form.validate():
+        title=request.form["title"]
+        body=request.form["body"]
+
+        #create cursor
+        cur=db.connect()
+        #execute
+        print(title,body,session["username"])
+        res=cur.execute(text("UPDATE articles set title= {0}, body = {1}  WHERE id = {2}".format(quote_string(title),
+										     quote_string(body),
+										     quote_string(str(id)),
+										     )).execution_options(autocommit=True))
+        #it gets auto-commited &closing the connection
+        res.close() 
+        cur.close()
+        #success message
+        flash("Article updated","success")
+        #redirecting to dashboard
+        return redirect(url_for('dashboard'))
+        
+    return render_template('edit_article.html',form=form)
+
+#Delete Article
+@app.route('/delete_article/<string:id>', methods=["POST"])
+@is_logged_in
+def delete_article(id):
+    #create cursor
+    cur=db.connect()
+
+    #Execute
+    res=cur.execute("DELETE FROM articles where id = {0}".format(quote_string(str(id))))
+    
+    #closing connection
+    res.close()
+    cur.close()
+
+    flash('Article got deleted','success')
+
+    return redirect(url_for("dashboard"))
 
 if __name__=="__main__":
     app.run(host='127.0.0.1', port=8080, debug=True)
