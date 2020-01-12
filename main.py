@@ -10,7 +10,7 @@ from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators 
 from passlib.hash import sha256_crypt
 from functools import wraps
-from data import Articles
+#from data import Articles
 import sqlalchemy
 import os 
 import logging
@@ -25,7 +25,7 @@ db_name = os.environ.get("DB_NAME")
 cloud_sql_connection_name = os.environ.get("CLOUD_SQL_CONNECTION_NAME")
 logger=logging.getLogger()
 
-mode="cloud"
+mode="local"
 if mode =="local": 
     db=sqlalchemy.create_engine(string_local)
 else :     
@@ -68,12 +68,37 @@ def about():
 #Articles
 @app.route("/Articles")
 def articles():
-    return render_template("articles.html", articles=Articles())
+    #create cursor
+    curr=db.connect()
+    #get articles 
+    result=curr.execute("select * from articles")
+    articles=result.fetchall()
+    #closing the proxy object of sqlalchemy
+    result.close()
+
+    if len(articles)>0:
+        return render_template("articles.html",articles=articles)
+    else:
+        msg="No Articles Found"
+        return render_template("articles.html", msg=msg)
 
 #single article
 @app.route("/Articles/<string:id>/")
 def article(id):
-    return render_template("article.html", id=id)
+    #create cursor
+    curr=db.connect()
+    #get articles 
+    result=curr.execute("select * from articles WHERE id = {0}".format(quote_string(str(id))))
+    article=result.fetchone()
+    #closing the proxy object of sqlalchemy
+    result.close()
+
+    try :
+        len(article)>0
+        return render_template("article.html", article=article)
+    except:
+        msg="No Article Found"
+        return render_template("article.html", msg=msg)
 
 #Registeration Form class
 class RegisterForm(Form):
@@ -117,7 +142,7 @@ def register():
 
 #helper_function for wrapping string in one more layer of quotes
 def quote_string(string):
-    string='"'+string+'"'
+    string="'"+string+"'"
     return string
 
 
@@ -173,6 +198,7 @@ def is_logged_in(f):
 
 
 @app.route("/logout")
+@is_logged_in
 def logout():
     session.clear()
     flash("You are now logged out", 'success')
@@ -182,9 +208,46 @@ def logout():
 @app.route("/dashboard")
 @is_logged_in
 def dashboard():
-    return render_template("dashboard.html")
+    #create cursor
+    curr=db.connect()
+    #get articles 
+    result=curr.execute("select * from articles")
+    articles=result.fetchall()
+    #closing the proxy object of sqlalchemy
+    result.close()
 
+    if len(articles)>0:
+        return render_template("dashboard.html",articles=articles)
+    else:
+        msg="No Articles Found"
+        return render_template("dashboard.html", msg=msg)
 
+class ArticleForm(Form):
+    title= StringField("title", [validators.Length(min=1, max=200)])
+    body=TextAreaField("body",[validators.Length(min=30)])
+    
+#view for add_arcticle
+@app.route("/add_article", methods=["GET", "POST"])
+@is_logged_in
+def add_article():
+    form =ArticleForm(request.form)
+    if request.method =="POST" and form.validate():
+        title=form.title.data
+        body=form.body.data
+
+        #create cursor
+        cur=db.connect()
+        #execute
+        #print(title,body,session["username"])
+        res=cur.execute("INSERT INTO articles(title, body, author) VALUES({0},{1},{2})".format(quote_string(title),quote_string(body),quote_string(session["username"])))
+        #it gets auto-commited &closing the connection
+        res.close() 
+        #success message
+        flash("Article Created","success")
+        #redirecting to dashboard
+        return redirect(url_for('dashboard'))
+        
+    return render_template('add_article.html',form=form)
 
 if __name__=="__main__":
     app.run(host='127.0.0.1', port=8080, debug=True)
