@@ -92,6 +92,7 @@ def article(id):
     article=result.fetchone()
     #closing the proxy object of sqlalchemy
     result.close()
+    print(article)
 
     try :
         len(article)>0
