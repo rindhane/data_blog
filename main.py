@@ -26,7 +26,7 @@ db_name = os.environ.get("DB_NAME")
 cloud_sql_connection_name = os.environ.get("CLOUD_SQL_CONNECTION_NAME")
 logger=logging.getLogger()
 
-mode="local"
+mode="cloud"
 if mode =="local": 
     db=sqlalchemy.create_engine(string_local)
 else :     
