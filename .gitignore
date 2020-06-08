@@ -1,0 +1,14 @@
+#build files
+.vscode/
+__pycache__/
+
+#python library_folder
+
+#secrets & db
+*.sqlite3
+
+#personal_details
+secret_files/
+
+#gcloud ignore config file
+.gcloudignore
