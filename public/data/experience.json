@@ -1,6 +1,6 @@
 [{
-    "title": "Selection of suitable index derivatives based on the price premium",
-    "link": "Code Respository at GitHub",
+    "title": "Lead Technial Architect",
+    "time": "Jan 2020 - Present",
     "points": [
         "Carried out the analysis to estimate the call premiums using theBlack-Scholes-Merton equation.",
         "Built function to scrape the live data of the derivatives from BSE site drive the analysis in real time to extend it to algorithmic trading",
@@ -8,8 +8,8 @@
     ]
 },
 {
-    "title": "Selection of suitable index derivatives based on the price premium",
-    "link": "Code Respository at GitHub",
+    "title": "Lead Technial Architect",
+    "time": "Jan 2020 - Present",
     "points": [
         "Carried out the analysis to estimate the call premiums using theBlack-Scholes-Merton equation.",
         "Built function to scrape the live data of the derivatives from BSE site drive the analysis in real time to extend it to algorithmic trading",
@@ -17,5 +17,3 @@
     ]
 }
 ]
-
-

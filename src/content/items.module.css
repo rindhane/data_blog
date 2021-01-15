@@ -1,0 +1,12 @@
+.block {
+    margin:  10px;
+    display : flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    min-width: 40%;
+}
+
+hr {
+    border-radius: 1px;
+    width: 100% ;
+}
