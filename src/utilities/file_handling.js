@@ -1,6 +1,6 @@
 const getData=(file)=>{
-    return fetch(file
-    ,{
+    return fetch(file,
+    {
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json',
