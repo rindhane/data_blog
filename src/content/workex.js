@@ -6,9 +6,9 @@ let Workex = (props) => {
     return (
         <div className={style.block}>
             <h3>{exp.title}</h3>
-            <div>{exp.time}</div>
+            <div className={style.sideRight}>{exp.time}</div>
             <ol>
-                {exp.points.map(point=>{return (<li>{point}</li>);})}
+                {exp.points.map((point,index)=>{return (<li key={index}>{point}</li>);})}
             </ol>
             <hr/>
         </div>

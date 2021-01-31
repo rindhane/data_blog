@@ -1,0 +1,26 @@
+[
+{
+    "title": "Data Science Nano-Degree",
+    "provider": "Udacity",
+    "link": "certifate1/see",
+    "content": "Building data science skills for industry level problems"
+},
+{
+    "title": "CFA [Level-1]",
+    "provider": "Cfa Institute",
+    "link": "certifate1/see",
+    "content": "Understanding of portfolio management, equity analysis, economic theory."
+},
+{
+    "title": "Machine Learning ",
+    "provider": "Stanford",
+    "link": "certifate1/see",
+    "content": "Mathematical understanding to build ML models from scratch."
+},
+{
+    "title": "Customer Analytics ",
+    "provider": "Wharton",
+    "link": "certifate1/see",
+    "content": "Understanding of analytics to predict customer behaviour for sales turnover"
+}
+]
