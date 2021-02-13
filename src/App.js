@@ -4,7 +4,7 @@ import getData from './utilities/file_handling.js';
 import Workex from './content/workex.js';
 import Education from './content/education.js';
 import style from './content/app.module.css';
-import Intro from "./content/intro.js"
+import Intro from "./content/intro.js";
 
 const App = () => {
   const [data , setData]=useState([]);

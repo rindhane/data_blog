@@ -1,3 +1,4 @@
+import React from "react";
 import style from './items.module.css';
 
 let Education = (props) => {
@@ -9,7 +10,7 @@ let Education = (props) => {
                   'Wind simulation for India’s wind potential']
     }; 
     return (
-        <div className={style.block}>
+        <div className={style.category}>
             <h3>{course.title}</h3>
             <div className={style.sideRight}>
                 <span>2007-2011 </span>

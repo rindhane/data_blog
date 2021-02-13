@@ -1,11 +1,11 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-.block {
+.category {
     margin: 10px;
     display : flex;
     flex-direction:column;
-    min-width : 90%;
-    flex-wrap: wrap;
+    max-width : 98%;
+    padding:5px;
 }
 
 .section {
@@ -20,12 +20,12 @@
 }
 
 .title {
-    font-size: 110% ;
+    font-weight: bold ;
 }
 
 hr {
     border-radius: 1px;
-    width: 100% ;
+    width: 98% ;
 }
 
 img {

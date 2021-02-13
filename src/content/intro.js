@@ -7,11 +7,11 @@ const Intro = (props) =>{
         <div className={style.section}>
             <img src="photo.jpg" alt="img"></img>
             <h3 style={{textAlign:'center'}}>Rahul Indhane</h3>
-            <div className={style.block}>
+            <div className={style.category}>
                 <i className="fa fa-user-circle-o" aria-hidden="true"> Rahul Indhane
-                </i>
-                <i className="fa fa-briefcase "> Project Manager, Solution Architect</i>
-                <i className="fa fa-home"> Pune, India</i>
+                </i><br/>
+                <i className="fa fa-briefcase "> Project Manager, Solution Architect</i><br/>
+                <i className="fa fa-home"> Pune, India</i><br/>
                 <i className="fa fa-envelope"> email@irahul.me</i>
             </div>
             <hr/>
@@ -19,7 +19,7 @@ const Intro = (props) =>{
                 <i className="fa fa-superpowers fa-2x" aria-hidden="true"></i>
                 <span className={style.sectionHeading}>Skills</span> 
             </div> 
-            <div className={style.block}>   
+            <div className={style.category}>   
                 <p>Python, C/C++, Java</p> 
                 <div className={style.progress} style={{width: "80%"}}>80%</div>
                 <p>HTML, CSS, JavaScript, SQL</p>
@@ -38,7 +38,7 @@ const Intro = (props) =>{
                 <i className="fa fa-id-card fa-2x" aria-hidden="true"></i>
                 <span className={style.sectionHeading}>Certifications</span> 
             </div>
-            <div className={style.block}>
+            <div className={style.category}>
                 {certi.map((cert,index)=>{
                     return (
                     <div key={index}>

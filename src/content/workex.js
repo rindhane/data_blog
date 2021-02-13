@@ -4,7 +4,7 @@ import style from './items.module.css';
 let Workex = (props) => {
     let exp=props.exp 
     return (
-        <div className={style.block}>
+        <div className={style.category}>
             <h3>{exp.title}</h3>
             <div className={style.sideRight}>{exp.time}</div>
             <ol>
