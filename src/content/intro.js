@@ -10,8 +10,8 @@ const Intro = (props) =>{
             <div className={style.block}>
                 <i className="fa fa-user-circle-o" aria-hidden="true"> Rahul Indhane
                 </i>
-                <i className="fa fa-briefcase "> Project Manager</i>
-                <i className="fa fa-home"> Gurgaon, India</i>
+                <i className="fa fa-briefcase "> Project Manager, Solution Architect</i>
+                <i className="fa fa-home"> Pune, India</i>
                 <i className="fa fa-envelope"> email@irahul.me</i>
             </div>
             <hr/>
