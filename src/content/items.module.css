@@ -2,8 +2,8 @@
 
 .category {
     margin: 10px;
-    display : flex;
-    flex-direction:column;
+    /*display : flex;
+    flex-direction:column;*/
     max-width : 98%;
     padding:5px;
 }
