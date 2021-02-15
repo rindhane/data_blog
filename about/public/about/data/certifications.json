@@ -1,0 +1,33 @@
+[
+{
+    "title": "Data Science Nano-Degree",
+    "provider": "Udacity",
+    "link": "https://graduation.udacity.com/confirm/LMS4ARQK",
+    "content": "Building data science skills for industry level problems"
+},
+{
+    "title": "CFA [Level-II Candidate]",
+    "provider": "CFA Institute",
+    "link": "https://basno.com/ep9hi852",
+    "content": "Understanding of portfolio management, equity analysis, economic theory."
+},
+{
+    "title": "Machine Learning ",
+    "provider": "Stanford",
+    "link": "https://coursera.org/share/16a4290d3176c4c43151e9011d3b7787",
+    "content": "Mathematical understanding to build ML models from scratch."
+},
+{
+    "title": "Customer Analytics ",
+    "provider": "Wharton",
+    "link": "https://coursera.org/share/37142f5a8698f7c72e9c0a5ee39bace1",
+    "content": "Understanding of analytics to predict customer behaviour for sales turnover"
+},
+{
+    "title": "Advanced ML on Google Cloud",
+    "provider": "Google Cloud",
+    "link": "https://coursera.org/share/7e673157112cde7a7d94fcf0029e9e62",
+    "content": "Creating and Deploying End to End ML model  on TensorFlow Cloud Platform"
+
+}
+]

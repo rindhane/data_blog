@@ -1,0 +1,50 @@
+[{
+    "title": "Selection of suitable index derivatives based on the price premium.",
+    "link": "https://github.com/rindhane/stock_options/blob/master/Derivative%20Analysis.ipynb",
+    "points": [
+        "Carried out the analysis to estimate the call premiums using theBlack-Scholes-Merton equation.",
+        "Built function to scrape the live data of the derivatives from BSE site drive the analysis in real time to extend it to algorithmic trading",
+        "Created API methods to produce local database in sqlite of historical re   cords of stock prices from the BSE website."
+    ]
+},
+{
+    "title": "Message Labelling for Disaster Support Response by Figure8 (Apen Company)",
+    "link": "https://github.com/rindhane/MessageLabelling",
+    "points":[
+        "Conducted Exploratory Analysis on the Figure-8 data to ensure message classification strategy",
+        "Built ETL Pipeline to process the incoming message on real time basis and to store the process data ",
+        "Built ML Pipeline of Natural Language Processing to train and categorize the incoming message in broad 18 classfication of response entities",
+        "Deployed End to End solution on Google Cloud Platform to visualize the complete solution"
+    ]
+},
+{
+    "title": "Earning Potential analysis of Airbnb listing's within Boston City.",
+    "link": "https://github.com/rindhane/DataMusings/tree/master/AirBnB_realty",
+    "points": [
+        "Built a scraping system to obtain listing's publicly available data related to required time period and city in question.",
+        "Made a framework to process the scraped data into measurable information for investigative analysis",
+        "Conducted thorough in-depth analysis to find the earning potential for a listing within a city the target city was 'Boston',and found out the factors which influences the earning potential.",
+        "Created visualization to demonstrate the analytical results and packaged the solution in open code respository to extend it for future by other real estate researchers"
+    ]
+},
+{
+    "title": "Prediction of the SKU-segment sales for retail branches of Big-Mart.",
+    "link": "https://github.com/rindhane/sales_analysis/blob/master/Project2_solution_for_big_mart.ipynb",
+    "points": [
+        "Conducted exploratory analysis of the raw data to select the parameters for the selection of features for sales prediction.",
+        "Created regression models from Tensor ow, Scikit libraries to prepare a best performing method for prediction, selected through comparative analysis.",
+        "The resultant method is to able to predict the sales around the sigma deviation of the mean sales of entire segments."
+    ]
+},
+{
+    "title": "Image Classifier to identify 102 species of flowers.",
+    "link": "https://github.com/rindhane/Image_classifier",
+    "points": [
+        "Built a command line API to be consumed in local application to identify the ower species in a full resolution image.",
+        "Functionality of code was to create a fully connected layer to train the local application on CNN & deliver the prediction as API output.",
+        "Pytorch’s Resnet & VGG pre-trained CNN were used to build application"
+    ]
+}
+]
+
+

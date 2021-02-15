@@ -1,0 +1,68 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.category {
+    margin: 10px;
+    display : flex;
+    flex-direction:column;
+    max-width : 98%;
+    padding:5px;
+}
+.padMargin {
+    margin:10px;
+    pad : 2px;
+}
+
+.textTeal{
+    color: teal;
+}
+.section {
+    margin: 5px;
+    min-width : 95%;
+    display : flex;
+    flex-direction:column;
+}
+
+.sectionHeading {
+    font-size: 180% ;
+}
+
+.title {
+    font-weight: bold ;
+}
+
+hr {
+    border-radius: 1px;
+    width: 98% ;
+}
+
+img {
+    margin : 30px;
+    border-radius: 10%;
+    max-height: 250px;
+    max-width:250px;
+    vertical-align:center;
+    float:center;
+}
+
+.progress {
+  background: slategray;/*linear-gradient(to right top, #65dfc9, #6cdbeb);*/
+  /*width: 60%;*/
+  text-align:center;
+  height: 25%;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  align-content: center;
+}
+
+i::after
+{
+    content: "   ";
+    white-space: pre;
+}
+
+.sideRight {
+    text-align: right;
+    font-style: oblique;
+    color: teal;
+}
