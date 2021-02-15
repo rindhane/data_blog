@@ -7,6 +7,7 @@ pyenv/
 
 #only build and not source 
 src/
+templates_old/
 #git files/
 .git/
 
