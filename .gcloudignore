@@ -3,15 +3,12 @@
 __pycache__/
 
 #python library_folder
+pyenv/
 
-#secrets & db
-*.sqlite3
-
-#personal_details
-secret_files/
-
-#gcloud ignore config file
-#.gcloudignore
+#only build and not source 
+src/
+#git files/
+.git/
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
