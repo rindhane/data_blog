@@ -5,8 +5,9 @@ import Workex from './content/workex.js';
 import Education from './content/education.js';
 import style from './content/app.module.css';
 import Intro from "./content/intro.js";
+import static_url from './static_url.js';
 
-const App = () => {
+const AboutApp = () => {
   const [data , setData]=useState([]);
   const [exps , setExps]=useState([]);
   const [certi , setCerti]=useState([]);
@@ -14,13 +15,13 @@ const App = () => {
     getDetails();
   },[]);
   const getDetails = async () => {
-    let resp = await getData('/static/about/data/projects.json');
+    let resp = await getData(static_url('projects'));
     resp=JSON.parse(resp);    
     setData(resp);
-    resp= await getData('/static/about/data/experience.json');
+    resp= await getData(static_url('workex'));
     resp=JSON.parse(resp);    
     setExps(resp);
-    resp= await getData('/static/about/data/certifications.json');
+    resp= await getData(static_url('certificates'));
     resp=JSON.parse(resp);    
     setCerti(resp);	
   };
@@ -62,4 +63,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default AboutApp;

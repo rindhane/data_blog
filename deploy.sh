@@ -8,7 +8,7 @@ cd about/ ;
 npm run build ; #make sure npm is installed
 cd ../ ;
 python manage.py collectstatic ; # make sure right pyenv is activated.
-gcloud app deploy ;# make sure right project in Gcloud is selected 
+gcloud app deploy ; #make sure right project in Gcloud is selected 
 
 
 

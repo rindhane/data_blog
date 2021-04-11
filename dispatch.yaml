@@ -1,0 +1,7 @@
+dispatch:
+  # Default service serves to chat server.
+  - url: "ipassport.info/*"
+    service: chat
+
+
+

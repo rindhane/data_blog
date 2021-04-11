@@ -1,11 +1,12 @@
 import style from './items.module.css';
+import static_url , {external_url} from '../static_url.js';
 
 
 const Intro = (props) =>{
     let certi=props.certi;
     return (
         <div className={style.section}>
-                <img src="/static/about/data/photo.jpg" alt="img"></img>
+                <img src={static_url('introPic')} alt="img"></img>
                 <h3 style={{textAlign:'center'}}>Rahul Indhane</h3>
                 <div className={style.category}>
                     <i className="fa fa-user-circle-o" aria-hidden="true"> Rahul Indhane
@@ -13,8 +14,8 @@ const Intro = (props) =>{
                     <i className="fa fa-briefcase "> Project Manager, Solution Architect</i><br/>
                     <i className="fa fa-home"> Pune, India</i><br/>
                     <i className="fa fa-envelope"> email@irahul.me</i><br/>
-                    <i className="fa fa-phone"> +91-8130848031</i><br/>
-                    <i className="fa fa-wpforms" aria-hidden="true"><a href="https://drive.google.com/file/d/1Oo-2DhAy8sx-PJYsF2CUA7cmHfoeNafO/view?usp=sharing"> Resume</a></i>
+                    <i className="fa fa-whatsapp"> <a href={external_url('chat')}> Instant Chat</a></i><br/>
+                    <i className="fa fa-wpforms" aria-hidden="true"><a href={external_url('resume')}> Resume</a></i>
                     
                 </div>
             <hr/>

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AboutApp from './About';
 //import reportWebVitals from './reportWebVitals';
 //import {createStore} from 'redux';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AboutApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
