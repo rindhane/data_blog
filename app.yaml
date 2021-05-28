@@ -1,4 +1,4 @@
-runtime: python37
+runtime: python38
 
 handlers:
   # This configures Google App Engine to serve the files in the app's static
@@ -11,3 +11,5 @@ handlers:
   # the entire handlers section) when there are no static files defined.
 - url: /.*
   script: auto
+  secure: always
+  redirect_http_response_code: 301

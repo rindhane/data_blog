@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Common metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <title>
+    Rahul | About Me
+    </title>
+    {% load static %}
+    <!-- SEO metas -->
+    <meta name="description" content="About me">
+    <link rel="canonical" href="https://irahul.me/">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    <!-- CSS files -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Lora:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+  
+</head>  
+<body>
+    <div class="site">
+        <!-- site-header start-->
+        <header class="site-header">
+            <nav class="site-nav">
+                <a href="{% url 'site:about' %}" title="Home page">About</a>
+                <a href="{% url 'site:work' %}" title="Details about Work">Work</a>
+                <a href="{% url 'site:blog'%}" title="My blog">Blog</a>
+            </nav>
+        </header>
+        <!-- site-header end -->
+        {% block content %}{% endblock %}
+        <!---site-footer start-->
+        <footer class="site-footer">
+            <div class="site-copy">© 2021<span class="site-author">Rahul Indhane</span></div>
+            <div class="site-links">
+                <div class="site-contact">
+                    <ul>
+                        <li><a href="mailto:email@irahul.me">Contact</a></li>
+                        <li><a target="_blank" rel="external" href="https://github.com/rindhane/">Github</a></li>
+                        <li><a target="_blank" rel="external" href="https://twitter.com/i_rahul01">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="site-source">
+                    <ul>
+                    <li><a target="_blank" href="https://github.com/rindhane/data_blog">Source</a></li>
+                    <span><a href="https://github.com/clenemt/jackal">Theme</a></span>
+                    <li><a target="_blank" href="https://github.com/christophM/christophm.github.io">credits</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- site-footer end -->  
+    </div>
+</body>
+</html>

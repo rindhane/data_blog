@@ -13,15 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Nice help on urls https://stackoverflow.com/questions/52473830/unable-to-resolve-url-string-for-path-using-name-with-reverse/52473895
+
 from django.contrib import admin
 from django.urls import include, path 
 from django.shortcuts import redirect
+from django.urls import reverse
+from django.http import HttpResponse
 
+'''
 def temp (request):
-    return redirect('about/')
+    return redirect(reverse('site:about'))
+'''
 
 urlpatterns = [
-        path('',temp, name = "temp"),
-        path('about/', include('about.urls'), name="about",),
+        path('s/', include('shorts.urls')),
+        path('', include('about.urls')),
+        path('resume/', include('resume.urls'), name='resume'),
         #path('admin/', admin.site.urls),
+        #path('',temp, name = "temp"),
 ]

@@ -32,7 +32,7 @@ sys.path.remove(path)
 SECRET_KEY = server_keys.get_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -40,7 +40,9 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'about.apps.WebAppConfig',
+    'resume.apps.WebAppConfig',
+    'about.apps.AboutConfig',
+    'shorts.apps.ShortsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

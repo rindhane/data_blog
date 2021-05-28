@@ -1,8 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from .apps import AboutConfig
 
-def index(request):
-    context = {"hello":"The title of the mind map"}
-    return render(request,'about/index.html',context)
+# Create your views here.
+def about(request):
+    return render(request,f'{AboutConfig.name}/about.html')
+
+def work(request):
+    return render(request,f'{AboutConfig.name}/work.html')
+
+def blog(request):
+    return render(request,f'{AboutConfig.name}/blog.html')
+
+def accounting(request):
+    content='''
+    <html>
+    <body>
+    <p>Details will be comming shortly !!!<p>
+    </body>
+    </html>
+    '''
+    return HttpResponse(content)
 

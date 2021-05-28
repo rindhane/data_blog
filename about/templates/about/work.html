@@ -1,0 +1,45 @@
+{% extends "about/layout.html" %}
+{% load static %}
+
+{% block content %}
+<!-- site-content -->
+<div class="site_content">
+    <h1 class="page__title">
+        <span class="page__title-pre">Quick overview</span> 
+        <span>Current & Past Work </span>
+    </h1>
+    <br/>
+    <section class="projectlist" >
+        <article class="projectlist__item">
+            <h2 class="projectlist__title">
+                <a class="projectlist__link" href="{% url 'site:accounting' %}">Project: Accounting Research</a>
+            </h2>
+            <div class="projectlist__meta">
+                <time class="projectlist__date" datetime="2021-05-18T00:00:00Z">May 2021 </time>
+                <span class="tags">
+                    <a href="#" class="tag">Research</a>
+                    <a href="#" class="tag">Current</a>
+                </span>
+            </div>
+            <p class="projectlist__excerpt">On account of my curriculum's requirement, I am looking to conduct a project work related to portfolio research </p>
+            <p>
+                <a href="{% url 'site:accounting' %}">Read →</a>
+            </p>
+        </article>
+        <article class="projectlist__item">
+            <h2 class="projectlist__title">
+                <a class="projectlist__link" href="{% url 'resume:index'%}">Curriculum Vitae</a>
+            </h2>
+            <div class="projectlist__meta">
+                <time class="projectlist__date" datetime="2021-01-18T00:00:00Z">Jan 2021 </time>
+                <span class="tags"><a href="#" class="tag">Past Work</a></span>
+            </div>
+            <p class="projectlist__excerpt">Detailed overview of my past projects and work experience. </p>
+            <p>
+                <a href="{% url 'resume:index'%}">Read →</a>
+            </p>
+        </article>
+    </section>
+</div>
+ <!-- site-content -->
+{% endblock %}
