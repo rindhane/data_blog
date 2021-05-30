@@ -6,7 +6,7 @@
 # For more information, run:
 #   $ gcloud topic gcloudignore
 #
-.gcloudignore
+#.gcloudignore
 # If you would like to upload your .git directory, .gitignore file or files
 # from your .gitignore file, remove the corresponding line
 # below:
@@ -22,6 +22,7 @@ __pycache__/
 sql_details.txt
 
 #python library_folder
+pyenv/
 Lib/
 Scripts/
 pyvenv.cfg

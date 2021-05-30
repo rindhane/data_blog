@@ -1,0 +1,15 @@
+runtime: python38
+
+env_variables:
+  CLOUD_SQL_CONNECTION_NAME: <MY-PROJECT>:<INSTANCE-REGION>:<MY-DATABASE-INSTANCE_NAME>
+  DB_USER: my-db-user
+  DB_PASS: my-db-pass
+  DB_NAME: my_db
+  SECRET_KEY: secretKey
+  MODE: cloud
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+  redirect_http_response_code: 301

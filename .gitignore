@@ -3,10 +3,7 @@
 __pycache__/
 
 #python library_folder
-Lib/
-Scripts/
-pyvenv.cfg
-Include/
+pyenv/
 
 
 #personal_details
@@ -15,4 +12,4 @@ my_app.yaml
 env_variables_local.bat
 
 #gcloud ignore config file
-.gcloudignore
+#.gcloudignore
