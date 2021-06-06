@@ -33,12 +33,12 @@ SCHEMA = dict(
             'ARTICLES':{
                 'name_in_db':'articles',
                 'primaryKey':"id",
-                'fields':['title','body','author',]
-            },
+                'fields':['title','body','author','create_date','id']
+                },
             'USERS':{
                 'name_in_db':'users',
                 'primaryKey':"username",
-                'fields':['name','email','username','password']
+                'fields':['name','email','username','password','registered_date','id']
             }
         }
     }
@@ -47,3 +47,4 @@ SCHEMA = dict(
 
 checkKey='primaryKey'
 #***************************************
+

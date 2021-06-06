@@ -18,7 +18,7 @@ from functools import wraps
 #from data import Articles
 from sqlalchemy import text
 from utilities import logger, environ, checkKey, SCHEMA
-from database_connector import get_items,\
+from database_connector_new import get_items,\
                                 insert_item,\
                                 update_item,\
                                 delete_item                                    
@@ -48,7 +48,7 @@ def articles():
         return render_template("articles.html", msg=msg)
 
 #single article
-@app.route("/Articles/<string:idx>/")
+@app.route("/Articles/<int:idx>/")
 def article(idx):
     article=get_items(table='ARTICLES', 
                             where={SCHEMA['tables']['ARTICLES'][checkKey]: idx}
@@ -185,7 +185,7 @@ def add_article():
         return redirect(url_for('dashboard'))
     return render_template('add_article.html',form=form)
 
-@app.route("/edit_article/<string:idx>", methods=["GET", "POST"])
+@app.route("/edit_article/<int:idx>", methods=["GET", "POST"])
 @is_logged_in
 def edit_article(idx):
     #check if any article with that id exist
@@ -204,7 +204,7 @@ def edit_article(idx):
         title=request.form["title"]
         body=request.form["body"]
         #call database function to execute the details and execute to enter the details
-        print(title,body,session["username"])
+        #print(title,body,session["username"])
         update_item(table="ARTICLES",
                     set_items={
                     SCHEMA['tables']['ARTICLES']['fields'][0]:title,
@@ -228,7 +228,7 @@ def edit_article(idx):
     return render_template('edit_article.html',form=form)
 
 #Delete Article
-@app.route('/delete_article/<string:idx>', methods=["POST"])
+@app.route('/delete_article/<int:idx>', methods=["POST"])
 @is_logged_in
 def delete_article(idx):
     #Execute
