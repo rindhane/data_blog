@@ -2,10 +2,12 @@
 
 #replace the below <temporary place holder> with the exact values 
 #replace export with set and filename ending with .bat instead of .sh to work it on windows  
-export CLOUD_SQL_CONNECTION_NAME='<gcloud projectname>:<database location>:<instance name>'
-export DB_USER='<username>'
-export DB_PASS='<password>'
-export DB_NAME='<database name within the instance>'
+#these database has been transferred to google cloud storage
+# archive details
+#export CLOUD_SQL_CONNECTION_NAME='<gcloud projectname>:<database location>:<instance name>'
+#export DB_USER='<username>'
+#export DB_PASS='<password>'
+#export DB_NAME='<database name within the instance>'
 export SECRET_KEY='<secret key>'
 #if the cloud connection is to be made to the cloud instance make the mode to the cloud 
 #export MODE="cloud" 
@@ -20,9 +22,12 @@ export SECRET_KEY='<secret key>'
 
 #below local setting are used for local development is used and using the proxy auth binary named as cloud_sql_proxy.binary
 
-export DB_LOCALHOST='mysql+pymysql://<username>:<password>@<localhost:port>/<database name>'
-export MODE='local'
+#archive db details not required
+#export DB_LOCALHOST='mysql+pymysql://<username>:<password>@<localhost:port>/<database name>'
+#export MODE='local'
 
+#set the path to client secrets json for cloud storage client 
+export CLIENT_SECRET='client_secret.json' #required for cloud storage access 
 echo 'environment variables are set'
 
 # running flask app

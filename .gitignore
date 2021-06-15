@@ -7,7 +7,7 @@ pyenv/
 
 
 #personal_details
-sql_details.txt
+secrets/
 my_app.yaml
 env_variables_local.bat
 

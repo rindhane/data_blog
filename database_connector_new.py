@@ -1,11 +1,13 @@
 from FileDatabase.manager import  Database, outputFormatter, where_filter
-from FileDatabase.MiddlewareSetup import localFileMiddleware
-from utilities import SCHEMA,checkKey
-
+from FileDatabase.MiddlewareSetup import gcloudMiddleware
+from utilities import SCHEMA,checkKey,environ
 
 #***initiating  the database*****
-fileWare=localFileMiddleware(filepath='FileDatabase/database.json',dataPath='FileDatabase')
-db=Database(middleware=fileWare,)
+fileWare=gcloudMiddleware(filepath='database.json', 
+                         datapath='database-cloud',
+                         service_account_path=environ.get('CLIENT_SECRET')
+                         )
+db=Database(middleware=fileWare)
 db.load_from_file()
 #********************************
 

@@ -1,12 +1,13 @@
 runtime: python38
 
 env_variables:
-  CLOUD_SQL_CONNECTION_NAME: <MY-PROJECT>:<INSTANCE-REGION>:<MY-DATABASE-INSTANCE_NAME>
-  DB_USER: my-db-user
-  DB_PASS: my-db-pass
-  DB_NAME: my_db
-  SECRET_KEY: secretKey
-  MODE: cloud
+  SECRET_KEY: <secretKey value>
+  CLIENT_SECRET: <path/to/client_secret.json>
+  #CLOUD_SQL_CONNECTION_NAME: <MY-PROJECT>:<INSTANCE-REGION>:<MY-DATABASE-INSTANCE_NAME>
+  #DB_USER: my-db-user
+  #DB_PASS: my-db-pass
+  #DB_NAME: my_db
+  #MODE: cloud
 
 handlers:
 - url: /.*

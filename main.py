@@ -108,13 +108,13 @@ def login():
                         where={
                         SCHEMA['tables']["USERS"][checkKey]: username}
                         )
-        print(temp)
-        print(SCHEMA['tables']["USERS"][checkKey],",", username) 
+        #print(temp)
+        #print(SCHEMA['tables']["USERS"][checkKey],",", username) 
         if len(temp) > 0: 
             #get stored hash
             data = temp[0]
             password =data["password"]
-            print(sha256_crypt.verify(password_candidate,password))
+            #print(sha256_crypt.verify(password_candidate,password))
             if sha256_crypt.verify(password_candidate,password):
                 #passed authentication
                 session["logged_in"]= True
