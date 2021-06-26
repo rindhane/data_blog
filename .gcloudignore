@@ -8,6 +8,9 @@ pyenv/
 #only build and not source 
 src/
 templates_old/
+resume/static/*
+about/static/*
+
 #git files/
 .git/
 

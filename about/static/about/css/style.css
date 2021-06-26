@@ -911,6 +911,48 @@ a.tag:focus {
   border-color: gray;
 }
   
+.notelist {
+  position: relative;
+}
+.notelist::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2.5rem;
+    width: 1px;
+    background-color: rgb(4, 4, 112);
+  }
 
+.notelist__item {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    border: .02rem solid rgb(4, 4, 112); 
+    border-radius: 0.2rem;
+
+  }
+
+.notelist__content > *:last-child {
+    margin-bottom: .5rem;
+  }
+
+.notelist__date {
+    display: flex;
+    justify-content:right;
+    color: rgb(15, 146, 3);
+    font-size: 1rem;
+    /*margin-bottom: 0.75rem; */
+  }
+
+  a[rel~="noopener"]{
+    padding-right: 1rem;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17l9.2-9.2M17 17V7H7'/></svg>");
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: top 2px right 3px;
+}
   
    

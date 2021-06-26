@@ -27,6 +27,7 @@ node_modules/
 # production
 build/
 /static/
+/resume/static/*
 
 # misc
 .DS_Store

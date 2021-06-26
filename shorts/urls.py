@@ -11,4 +11,5 @@ app_name='shorts'
 urlpatterns= [
         path('',temp,name='temp'),
         path('moody',views.moodyresume, name='r1'),
+        path('resume',views.moodyresume, name='r2'),
         ]

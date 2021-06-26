@@ -13,12 +13,4 @@ def blog(request):
     return render(request,f'{AboutConfig.name}/blog.html')
 
 def accounting(request):
-    content='''
-    <html>
-    <body>
-    <p>Details will be comming shortly !!!<p>
-    </body>
-    </html>
-    '''
-    return HttpResponse(content)
-
+    return render(request,f'{AboutConfig.name}/accounting.html')
