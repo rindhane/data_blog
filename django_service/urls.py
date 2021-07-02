@@ -28,6 +28,7 @@ def temp (request):
 
 urlpatterns = [
         path('s/', include('shorts.urls')),
+        path('downloads/',include('shorts.urls_downloads')),
         path('', include('about.urls')),
         path('resume/', include('resume.urls'), name='resume'),
         #path('admin/', admin.site.urls),
