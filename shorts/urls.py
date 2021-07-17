@@ -12,4 +12,5 @@ urlpatterns= [
         path('',temp,name='temp'),
         path('moody',views.moodyresume, name='r1'),
         path('resume',views.moodyresume, name='r2'),
+        path('evernote',views.oauth_evernote,name='evernote'),
         ]
