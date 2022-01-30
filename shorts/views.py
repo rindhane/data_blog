@@ -19,3 +19,6 @@ def oauth_evernote(request):
     verifier=result.get('oauth_verifier','None')
     return HttpResponse(
         f'oauth_token:{oauth} <br> verifier:{verifier}')
+
+def resumePdf(request):
+    return redirect('https://drive.google.com/file/d/14QtY5MXR33lGyJHpuOVbacdZd0Q_kmPs/view?usp=sharing')

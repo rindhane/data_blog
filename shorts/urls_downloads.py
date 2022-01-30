@@ -11,5 +11,6 @@ app_name='downloads'
 urlpatterns= [
         path('',temp,name='temp'),
         path('maruti1',views.maruti1resume,name='r3'),
-        path('maruti2',views.maruti2resume,name='r4')
+        path('maruti2',views.maruti2resume,name='r4'),
+        path('resumepdf',views.resumePdf,name='r5'),
         ]

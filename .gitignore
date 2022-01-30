@@ -4,6 +4,7 @@ __pycache__/
 
 #python library_folder
 pyenv/
+py3win/
 
 #secrets & db
 *.sqlite3

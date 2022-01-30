@@ -4,6 +4,7 @@ __pycache__/
 
 #python library_folder
 pyenv/
+py3win/
 
 #only build and not source 
 src/
