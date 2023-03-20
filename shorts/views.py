@@ -22,3 +22,6 @@ def oauth_evernote(request):
 
 def resumePdf(request):
     return redirect('https://drive.google.com/file/d/14QtY5MXR33lGyJHpuOVbacdZd0Q_kmPs/view?usp=sharing')
+
+def resumeRahul(request):
+    return redirect("https://drive.google.com/file/d/18iqmQeJC-KJZ_e4dVau9wg6pDr8EYv_P/view?usp=sharing")
