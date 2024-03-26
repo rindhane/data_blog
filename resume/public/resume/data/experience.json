@@ -3,8 +3,10 @@
     "time": "Dec 2021 - Present",
     "organization": "Hexagon (MSC Software Corporation India Pvt. Ltd)",
     "points": [
-        "Lead architect for Technical Design of Industry 4.0 solutions for manufacturing segment customers.",
+        "Designed, developed and deployed centralized dashboard system (over Q-DAS API system) to monitor the day to day quality-KPI and SPC monitoring of 3 mfg. plants for leader in manufacturer of commercial vehicles in India.",
         "Designed solutions on integrating entreprise wide quality management systems for the leading Indian automotive/ICE manufacturers.",
+        "Lead architect for Technical Design of Industry 4.0 solutions for manufacturing segment customers.",
+        "Lead the Custom Development Team for enablement of 10x sales of Q-DAS (SPC-product) for Indian region",
         "Deployment of concept-proof on WhatsApp-query & notificiation services with the customer MES-system for critical asset monitoring."
     ]
 },

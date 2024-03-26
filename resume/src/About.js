@@ -35,14 +35,6 @@ const AboutApp = () => {
         <section>
           <div className={style.container}>
             <div className={style.heading}>
-                    <i className="fa fa-tasks " aria-hidden="true"></i>
-                    <span className={style.title}>Data Science Projects</span> 
-            </div> 
-            { data.map((val,index) => {
-                  return <Project key={index} project={val} /> })}
-          </div>
-          <div className={style.container}>
-            <div className={style.heading}>
                   <a href='https://in.linkedin.com/in/rindhane'>
                     <i className="fa fa-linkedin-square" aria-hidden="true"></i>
                   </a>
@@ -50,6 +42,14 @@ const AboutApp = () => {
             </div> 
             { exps.map((val,index)=>{
               return <Workex key= {index} exp={val} />})}
+          </div>
+          <div className={style.container}>
+            <div className={style.heading}>
+                    <i className="fa fa-tasks " aria-hidden="true"></i>
+                    <span className={style.title}>Data Science Projects</span> 
+            </div> 
+            { data.map((val,index) => {
+                  return <Project key={index} project={val} /> })}
           </div>
           <div className={style.container}>
             <div className={style.heading}>
