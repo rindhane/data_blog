@@ -1,13 +1,26 @@
 [{
+    "title": "Software Solution Consultant",
+    "time": "Oct 2024 - Present",
+    "organization": "Independent Software Consultant",
+    "points": [
+        "Directed the architecture and design of a scalable, secure, high-performance SaaS platform for supplier discovery and management in the Auto & Aero component manufacturing industry.",
+        "Designed a framework for operational workflows, including supplier selection, production SOP development, and WMS order flow.",
+        "Engineering Gen-AI solutions to automate user input handling, streamline workflows, and reduce manual effort."
+    ]
+},{
     "title": "Solution Architect in Smart Manufacturing Solutions",
-    "time": "Dec 2021 - Present",
+    "time": "Dec 2021 - Sep 2024",
     "organization": "Hexagon (MSC Software Corporation India Pvt. Ltd)",
     "points": [
-        "Designed, developed and deployed centralized dashboard system (over Q-DAS API system) to monitor the day to day quality-KPI and SPC monitoring of 3 mfg. plants for leader in manufacturer of commercial vehicles in India.",
+        "Designed, developed and deployed 'Enterprise Central Quality Monitoring Platform' (over Q-DAS API system) to monitor the day to day quality-KPI and SPC monitoring of 3 mfg. plants for leader in manufacturer of commercial vehicles in India.",
         "Designed solutions on integrating entreprise wide quality management systems for the leading Indian automotive/ICE manufacturers.",
         "Lead architect for Technical Design of Industry 4.0 solutions for manufacturing segment customers.",
+        "Crafted a tailored MES solution for dies & mold manufacturing process to achieve streamlining of design and production phases.",
         "Lead the Custom Development Team for enablement of 10x sales of Q-DAS (SPC-product) for Indian region",
-        "Deployment of concept-proof on WhatsApp-query & notificiation services with the customer MES-system for critical asset monitoring."
+        "Deployment of concept-proof on WhatsApp-query & notificiation services with the customer MES-system for critical asset monitoring.",
+        "Conceptualized & designed the traceability application over QDAS platform to achieve the key requirement of capturing genealogy of final product",
+        "Architected 10+ projects for “Connected Quality” offerings for manufacturing domain"
+
     ]
 },
 {

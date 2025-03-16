@@ -25,3 +25,6 @@ def resumePdf(request):
 
 def resumeRahul(request):
     return redirect("https://drive.google.com/file/d/18iqmQeJC-KJZ_e4dVau9wg6pDr8EYv_P/view?usp=sharing")
+
+def resumeETQ(request):
+    return redirect("https://drive.google.com/file/d/1wxTkUJ-K85HPE6OYVb-aRuuLUdzekhZf/view?usp=sharing")

@@ -14,4 +14,5 @@ urlpatterns= [
         path('maruti2',views.maruti2resume,name='r4'),
         path('resumepdf',views.resumePdf,name='r5'),
         path("resume_rahul", views.resumeRahul,name='r6'),
+        path("CV",views.resumeETQ,name="CV_ETQ_latest")
         ]

@@ -18,7 +18,7 @@ const static_url = (content , isPROD=!mode_DEV) => {
 
 export const external_url = (content )=>{
     let link='';
-    if (content==="resume"){link="https://drive.google.com/file/d/1Oo-2DhAy8sx-PJYsF2CUA7cmHfoeNafO/view?usp=sharing"}
+    if (content==="resume"){link="https://drive.google.com/file/d/1wxTkUJ-K85HPE6OYVb-aRuuLUdzekhZf/view?usp=sharing"}
     if (content==="chat"){link="https://ipassport.info"}
     return link;
 

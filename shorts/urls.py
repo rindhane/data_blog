@@ -13,4 +13,5 @@ urlpatterns= [
         path('moody',views.moodyresume, name='r1'),
         path('resume',views.moodyresume, name='r2'),
         path('evernote',views.oauth_evernote,name='evernote'),
+        path("CV",views.resumeETQ,name="CV_ETQ_latest")
         ]
